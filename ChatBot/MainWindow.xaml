@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ChatBot"
         mc:Ignorable="d"
         Icon="Imagenes/robot.ico"
-        Title="ChatBot" Height="450" Width="800">
+        Title="ChatBot" Height="500" Width="400">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Archivo">
