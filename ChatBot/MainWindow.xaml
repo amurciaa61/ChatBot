@@ -258,9 +258,7 @@
                       HorizontalScrollBarVisibility="Disabled">
             <ItemsControl x:Name="listaItemsControl"
                           Background="#FFFFE0"
-                          ItemsSource="{Binding}"
-                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                          ScrollViewer.VerticalScrollBarVisibility="Auto">
+                          ItemsSource="{Binding}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel />
