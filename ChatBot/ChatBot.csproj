@@ -73,6 +73,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mensaje.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -100,6 +101,33 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\robot.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\exit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\config.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\hombre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\robot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Datos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
