@@ -54,5 +54,15 @@ namespace ChatBot
                 new KeyGesture(Key.C,ModifierKeys.Control)
             }
         );
+        public static readonly RoutedUICommand EnviarMensaje = new RoutedUICommand
+        (
+            "Enter",
+            "EnviarMensaje",
+            typeof(CustomCommands),
+            new InputGestureCollection()
+            {
+                new KeyGesture(Key.Enter,ModifierKeys.None)
+            }
+        );
     }
 }

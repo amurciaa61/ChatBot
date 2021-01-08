@@ -26,6 +26,9 @@
                         Executed="CommandBinding_Executed_Guardar" />
         <CommandBinding CanExecute="CommandBinding_CanExecute_Configuracion"
                         Command="local:CustomCommands.Configuracion" />
+        <CommandBinding CanExecute="CommandBinding_CanExecute_EnviarMensaje"
+                        Command="local:CustomCommands.EnviarMensaje"
+                        Executed="CommandBinding_Executed_EnviarMensaje" />
     </Window.CommandBindings>
     <Window.Resources>
         <!--  Imagenes ToolBar  -->
@@ -246,7 +249,7 @@
             <Button x:Name="EnviarButton"
                     Grid.Column="1"
                     IsDefault="True"
-                    Click="EnviarButton_Click">
+                    Command="local:CustomCommands.EnviarMensaje">
                 <Image Width="33"
                        Source="Imagenes/send.png" />
             </Button>

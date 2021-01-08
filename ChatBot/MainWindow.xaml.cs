@@ -87,23 +87,31 @@ namespace ChatBot
             directorioActual += Path.DirectorySeparatorChar + directorioFinal;
             return directorioActual;
         }
+        private void CommandBinding_CanExecute_Configuracion(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = false;
+        }
 
-        private void EnviarButton_Click(object sender, RoutedEventArgs e)
+        private void CommandBinding_CanExecute_EnviarMensaje(object sender, CanExecuteRoutedEventArgs e)
+        {
+            if (mensajeTextBox.Text.Length > 0)
+                e.CanExecute = true;
+            else
+                e.CanExecute = false;
+        }
+
+        private void CommandBinding_Executed_EnviarMensaje(object sender, ExecutedRoutedEventArgs e)
         {
             try
             {
                 mensajes.Add(new Mensaje(mensajeTextBox.Text, "U"));
                 mensajes.Add(new Mensaje(MENSAJE_TEXTO_BOT, "B"));
                 mensajeTextBox.Text = "";
-            }catch(ArgumentException ex)
+            }
+            catch (ArgumentException ex)
             {
                 MessageBox.Show(ex.Message, "Errores", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
-
-        private void CommandBinding_CanExecute_Configuracion(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = false;
         }
     }
 }
