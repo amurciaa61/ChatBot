@@ -1,124 +1,133 @@
-﻿<Window 
-        x:Class="ChatBot.Configuracion"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ChatBot"
-        mc:Ignorable="d"
-        Title="Configuracion de la aplicación" Height="300" Width="400"
-        Icon="Imagenes/config.ico"
-        ShowInTaskbar="false"
-        ResizeMode="NoResize">
+﻿<Window
+    x:Class="ChatBot.Configuracion"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ChatBot"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Configuracion de la aplicación"
+    Width="400"
+    Height="300"
+    Icon="Imagenes/config.ico"
+    ResizeMode="NoResize"
+    ShowInTaskbar="false"
+    mc:Ignorable="d">
     <Window.Resources>
-        <!-- TextBlock -->
+        <!--  TextBlock  -->
         <Style TargetType="TextBlock">
-            <Setter Property="Margin"
-                    Value="10,22,0,0" />
+            <Setter Property="Margin" Value="10,22,0,0" />
         </Style>
-        <!-- Combobox -->
+        <!--  Combobox  -->
         <Style TargetType="ComboBox">
-            <Setter Property="Margin"
-                    Value="0,20,20,0" />
+            <Setter Property="Margin" Value="0,20,20,0" />
         </Style>
-        <!-- Botones -->
+        <!--  Botones  -->
         <Style TargetType="Button">
-            <Setter Property="MinWidth"
-                    Value="100" />
-            <Setter Property="Margin"
-                    Value="10,10,0,20" />
+            <Setter Property="MinWidth" Value="100" />
+            <Setter Property="Margin" Value="10,10,0,20" />
+        </Style>
+        <!--  Rectangle  -->
+        <Style x:Key="rectangulo" TargetType="Rectangle">
+            <Setter Property="Margin" Value="0,2,5,2" />
+            <Setter Property="Width" Value="16" />
+            <Setter Property="Height" Value="16" />
         </Style>
     </Window.Resources>
     <DockPanel>
-        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,20,0">
-            <Button x:Name="aceptarButton" IsDefault="True"
-                    Click="Button_Click_Aceptar">
+        <StackPanel
+            Margin="0,0,20,0"
+            HorizontalAlignment="Right"
+            DockPanel.Dock="Bottom"
+            Orientation="Horizontal">
+            <Button
+                x:Name="aceptarButton"
+                Click="Button_Click_Aceptar"
+                IsDefault="True">
                 Aceptar
             </Button>
             <Button x:Name="cancelarButton" IsCancel="True">Cancelar</Button>
         </StackPanel>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="45"/>
-                <RowDefinition Height="45"/>
-                <RowDefinition Height="45"/>
-                <RowDefinition Height="45"/>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="45" />
+                <RowDefinition Height="45" />
+                <RowDefinition Height="45" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="110"/>
+                <ColumnDefinition Width="110" />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Row="0"
-                       Grid.Column="0"
-                       Text="Color de fondo"/>
-            <ComboBox x:Name="fondoComboBox"
-                      Grid.Row="0"
-                      Grid.Column="1"
-                      SelectedIndex="75"
-                      SelectionChanged="fondoComboBox_SelectionChanged">
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="0"
+                Text="Color de fondo" />
+            <ComboBox
+                x:Name="fondoComboBox"
+                Grid.Row="0"
+                Grid.Column="1"
+                SelectedIndex="75"
+                SelectionChanged="FondoComboBox_SelectionChanged">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <Rectangle Fill="{Binding Name}"
-                                       Width="16"
-                                       Height="16"
-                                       Margin="0,2,5,2" />
+                            <Rectangle Fill="{Binding Name}" Style="{StaticResource rectangulo}" />
                             <TextBlock Text="{Binding Name}" />
                         </StackPanel>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <TextBlock Grid.Row="1"
-                       Grid.Column="0"
-                       Text="Color del usuario" />
-            <ComboBox x:Name="usuarioComboBox"
-                      Grid.Row="1"
-                      Grid.Column="1"
-                      SelectedIndex="68"
-                      SelectionChanged="usuarioComboBox_SelectionChanged">
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="0"
+                Text="Color del usuario" />
+            <ComboBox
+                x:Name="usuarioComboBox"
+                Grid.Row="1"
+                Grid.Column="1"
+                SelectedIndex="68"
+                SelectionChanged="UsuarioComboBox_SelectionChanged">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <Rectangle Fill="{Binding Name}"
-                                       Width="16"
-                                       Height="16"
-                                       Margin="0,2,5,2" />
+                            <Rectangle Fill="{Binding Name}" Style="{StaticResource rectangulo}" />
                             <TextBlock Text="{Binding Name}" />
                         </StackPanel>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <TextBlock Grid.Row="2"
-                       Grid.Column="0"
-                       Text="Color del robot" />
-            <ComboBox x:Name="robotComboBox"
-                      Grid.Row="2"
-                      Grid.Column="1"
-                      SelectedIndex="3"
-                      SelectionChanged="robotComboBox_SelectionChanged">
+            <TextBlock
+                Grid.Row="2"
+                Grid.Column="0"
+                Text="Color del robot" />
+            <ComboBox
+                x:Name="robotComboBox"
+                Grid.Row="2"
+                Grid.Column="1"
+                SelectedIndex="3"
+                SelectionChanged="RobotComboBox_SelectionChanged">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <Rectangle Fill="{Binding Name}"
-                                       Width="16"
-                                       Height="16"
-                                       Margin="0,2,5,2" />
+                            <Rectangle Fill="{Binding Name}" Style="{StaticResource rectangulo}" />
                             <TextBlock Text="{Binding Name}" />
                         </StackPanel>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <TextBlock Grid.Row="3"
-                       Grid.Column="0"
-                       Text="Sexo del usuario" />
-            <ComboBox x:Name="sexoComboBox"
-                      Grid.Row="3"
-                      Grid.Column="1"
-                      SelectedIndex="1"
-                      SelectionChanged="sexoComboBox_SelectionChanged"
-                      SelectedItem="{Binding Name}"
-                      HorizontalAlignment="Left"
-                      Width="150" />
+            <TextBlock
+                Grid.Row="3"
+                Grid.Column="0"
+                Text="Sexo del usuario" />
+            <ComboBox
+                x:Name="sexoComboBox"
+                Grid.Row="3"
+                Grid.Column="1"
+                Width="150"
+                HorizontalAlignment="Left"
+                SelectedIndex="0"
+                SelectedItem="{Binding Name}"
+                SelectionChanged="SexoComboBox_SelectionChanged" />
         </Grid>
     </DockPanel>
 </Window>
