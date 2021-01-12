@@ -14,6 +14,7 @@ namespace ChatBot
     {
         const string MENSAJE_TEXTO_BOT = "Lo siento, estoy un poco cansado para hablar.";
         const string DIRECTORIO_DATOS = "Datos";
+        string origen = Properties.Settings.Default.sexo;
         ObservableCollection<Mensaje> mensajes = new ObservableCollection<Mensaje>();
         public MainWindow()
         {
@@ -65,10 +66,7 @@ namespace ChatBot
                     using (StreamWriter sw = File.CreateText(saveFileDialog.FileName))
                     {
                         foreach (Mensaje mensaje in mensajes)
-                        {
-                            sw.WriteLine(mensaje.Origen == "U"?"Usuario":"Robot");
-                            sw.WriteLine(mensaje.Texto);
-                        }
+                            sw.WriteLine(mensaje.ToString());
                     }
                     MessageBox.Show("Generado Fichero txt: " + saveFileDialog.FileName,
                                     "Guardar conversación", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -87,10 +85,7 @@ namespace ChatBot
             directorioActual += Path.DirectorySeparatorChar + directorioFinal;
             return directorioActual;
         }
-        private void CommandBinding_CanExecute_Configuracion(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = true;
-        }
+
 
         private void CommandBinding_CanExecute_EnviarMensaje(object sender, CanExecuteRoutedEventArgs e)
         {
@@ -104,7 +99,7 @@ namespace ChatBot
         {
             try
             {
-                mensajes.Add(new Mensaje(mensajeTextBox.Text, "U"));
+                mensajes.Add(new Mensaje(mensajeTextBox.Text, origen));
                 mensajes.Add(new Mensaje(MENSAJE_TEXTO_BOT, "B"));
                 mensajeTextBox.Text = "";
             }
@@ -112,6 +107,24 @@ namespace ChatBot
             {
                 MessageBox.Show(ex.Message, "Errores", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+        private void CommandBinding_CanExecute_Configuracion(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+        private void CommandBinding_Executed_Configuracion(object sender, ExecutedRoutedEventArgs e)
+        {
+            Configuracion configuracion = new Configuracion();
+            configuracion.Owner = this;
+            if (configuracion.ShowDialog() == true)
+            {
+                Properties.Settings.Default.sexo = configuracion.Sexo;
+                origen = Properties.Settings.Default.sexo;
+                Properties.Settings.Default.colorFondo = configuracion.ColorFondo.ToString();
+                Properties.Settings.Default.colorUsuario = configuracion.ColorUsuario.ToString();
+                Properties.Settings.Default.colorRobot = configuracion.ColorRobot.ToString();
+                Properties.Settings.Default.Save();
+            }    
         }
     }
 }

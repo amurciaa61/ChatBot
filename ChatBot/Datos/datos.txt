@@ -1,0 +1,8 @@
+Usuario
+pepe
+Robot
+Lo siento, estoy un poco cansado para hablar.
+Usuario
+pp
+Robot
+Lo siento, estoy un poco cansado para hablar.

@@ -1,7 +1,18 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ChatBot.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="colorFondo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">LightYellow</Value>
+    </Setting>
+    <Setting Name="sexo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">H</Value>
+    </Setting>
+    <Setting Name="colorUsuario" Type="System.String" Scope="User">
+      <Value Profile="(Default)">LightGreen</Value>
+    </Setting>
+    <Setting Name="colorRobot" Type="System.String" Scope="User">
+      <Value Profile="(Default)">AquaMarine</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

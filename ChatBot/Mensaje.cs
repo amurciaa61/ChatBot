@@ -10,8 +10,8 @@ namespace ChatBot
 
         public Mensaje(string texto, string origen)
         {
-            if (origen != "U" && origen != "B")
-                throw new ArgumentException("Origen de mensaje debe ser de tipo U o B");
+            if (origen != "M" && origen != "H" && origen != "B")
+                throw new ArgumentException("Origen de mensaje debe ser de tipo M,H,B");
             Texto = texto;
             Origen = origen;
         }
@@ -45,7 +45,13 @@ namespace ChatBot
                 }
             }
         }
+        public override string ToString()
+        {
+            string texto = (Origen == "B"  ? "Robot":"Usuario")+"\n"+Texto;
+
+            return texto;
             
+        }
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propertyName)
         {

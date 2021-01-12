@@ -58,6 +58,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Configuracion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -65,6 +69,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuracion.xaml.cs">
+      <DependentUpon>Configuracion.xaml</DependentUpon>
     </Compile>
     <Compile Include="CustomCommands.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -128,6 +135,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Datos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\mujer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
