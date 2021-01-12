@@ -89,7 +89,7 @@ namespace ChatBot
         }
         private void CommandBinding_CanExecute_Configuracion(object sender, CanExecuteRoutedEventArgs e)
         {
-            e.CanExecute = false;
+            e.CanExecute = true;
         }
 
         private void CommandBinding_CanExecute_EnviarMensaje(object sender, CanExecuteRoutedEventArgs e)
