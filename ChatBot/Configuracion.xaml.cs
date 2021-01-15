@@ -20,32 +20,23 @@ namespace ChatBot
         {
             InitializeComponent();
             DataContext = this;
+
             fondoComboBox.ItemsSource = typeof(Colors).GetProperties();
             usuarioComboBox.ItemsSource = typeof(Colors).GetProperties();
             robotComboBox.ItemsSource = typeof(Colors).GetProperties();
+            ColorFondo = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.colorFondo);
+            ColorUsuario = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.colorUsuario);
             ObservableCollection<string> sexos = new ObservableCollection<string>{ "Hombre" , "Mujer" };
             sexoComboBox.ItemsSource = sexos;
-        }
-
-        private void FondoComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ColorFondo = (Color)(fondoComboBox.SelectedItem as PropertyInfo).GetValue(null,null);
-        }
-        private void UsuarioComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ColorUsuario = (Color)(usuarioComboBox.SelectedItem as PropertyInfo).GetValue(null, null);
-        }
-        private void RobotComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ColorRobot = (Color)(robotComboBox.SelectedItem as PropertyInfo).GetValue(null, null);
-        }
-        private void SexoComboBox_SelectionChanged(Object sender, SelectionChangedEventArgs e)
-        {
-            Sexo = sexoComboBox.SelectedItem.ToString().Substring(0,1);
+            Sexo = Properties.Settings.Default.sexo;
         }
 
         private void Button_Click_Aceptar(object sender, RoutedEventArgs e)
         {
+            ColorFondo = (Color)(fondoComboBox.SelectedItem as PropertyInfo).GetValue(null, null);
+            ColorUsuario = (Color)(usuarioComboBox.SelectedItem as PropertyInfo).GetValue(null, null);
+            ColorRobot = (Color)(robotComboBox.SelectedItem as PropertyInfo).GetValue(null, null);
+            Sexo = sexoComboBox.SelectedItem.ToString().Substring(0, 1);
             DialogResult = true;
         }
     }

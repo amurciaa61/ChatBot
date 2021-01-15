@@ -14,5 +14,14 @@
     <Setting Name="colorRobot" Type="System.String" Scope="User">
       <Value Profile="(Default)">AquaMarine</Value>
     </Setting>
+    <Setting Name="EndPoint" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://chatbotantonio.azurewebsites.net</Value>
+    </Setting>
+    <Setting Name="EndPointKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">84e581e5-7f70-42b7-a875-24b2f60b6d85</Value>
+    </Setting>
+    <Setting Name="KnowledgeBaseId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">20118cf2-e3ba-4c79-8dfd-a3146bcee13b</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

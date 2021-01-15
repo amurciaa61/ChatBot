@@ -32,6 +32,7 @@
             <Setter Property="Width" Value="16" />
             <Setter Property="Height" Value="16" />
         </Style>
+
     </Window.Resources>
     <DockPanel>
         <StackPanel
@@ -62,16 +63,15 @@
                 Grid.Row="0"
                 Grid.Column="0"
                 Text="Color de fondo" />
-            <ComboBox
-                x:Name="fondoComboBox"
-                Grid.Row="0"
-                Grid.Column="1"
-                SelectedIndex="75"
-                SelectionChanged="FondoComboBox_SelectionChanged">
+            <ComboBox x:Name="fondoComboBox"
+                      Grid.Row="0"
+                      Grid.Column="1"
+                      SelectedItem="{Binding Path=ColorFondo}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <Rectangle Fill="{Binding Name}" Style="{StaticResource rectangulo}" />
+                            <Rectangle Fill="{Binding Name}"
+                                       Style="{StaticResource rectangulo}" />
                             <TextBlock Text="{Binding Name}" />
                         </StackPanel>
                     </DataTemplate>
@@ -85,8 +85,7 @@
                 x:Name="usuarioComboBox"
                 Grid.Row="1"
                 Grid.Column="1"
-                SelectedIndex="68"
-                SelectionChanged="UsuarioComboBox_SelectionChanged">
+                SelectedItem="{Binding Path=ColorUsuario}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -104,8 +103,7 @@
                 x:Name="robotComboBox"
                 Grid.Row="2"
                 Grid.Column="1"
-                SelectedIndex="3"
-                SelectionChanged="RobotComboBox_SelectionChanged">
+                SelectedItem="{Binding Path=ColorRobot}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -125,9 +123,7 @@
                 Grid.Column="1"
                 Width="150"
                 HorizontalAlignment="Left"
-                SelectedIndex="0"
-                SelectedItem="{Binding Name}"
-                SelectionChanged="SexoComboBox_SelectionChanged" />
+                SelectedItem="{Binding Path=Sexo}"/>
         </Grid>
     </DockPanel>
 </Window>
