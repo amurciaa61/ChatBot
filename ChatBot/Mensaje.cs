@@ -10,8 +10,8 @@ namespace ChatBot
 
         public Mensaje(string texto, string origen)
         {
-            if (origen != "M" && origen != "H" && origen != "B")
-                throw new ArgumentException("Origen de mensaje debe ser de tipo M,H,B");
+            if (origen != "Mujer" && origen != "Hombre" && origen != "Bot")
+                throw new ArgumentException("Origen de mensaje debe ser de tipo Mujer, Hombre, Bot");
             Texto = texto;
             Origen = origen;
         }
@@ -47,7 +47,7 @@ namespace ChatBot
         }
         public override string ToString()
         {
-            string texto = (Origen == "B"  ? "Robot":"Usuario")+"\n"+Texto;
+            string texto = (Origen == "Bot"  ? "Robot":"Usuario")+"\n"+Texto;
 
             return texto;
             

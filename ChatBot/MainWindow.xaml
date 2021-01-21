@@ -49,13 +49,13 @@
         <!--  Imagen Origen Mensaje  -->
         <Style x:Key="imagenOrigen" TargetType="Image">
             <Style.Triggers>
-                <DataTrigger Binding="{Binding Path=Origen}" Value="H">
+                <DataTrigger Binding="{Binding Path=Origen}" Value="Hombre">
                     <Setter Property="Source" Value="Imagenes/hombre.png" />
                 </DataTrigger>
-                <DataTrigger Binding="{Binding Path=Origen}" Value="M">
+                <DataTrigger Binding="{Binding Path=Origen}" Value="Mujer">
                     <Setter Property="Source" Value="Imagenes/mujer.png" />
                 </DataTrigger>
-                <DataTrigger Binding="{Binding Path=Origen}" Value="B">
+                <DataTrigger Binding="{Binding Path=Origen}" Value="Bot">
                     <Setter Property="Source" Value="Imagenes/robot.png" />
                 </DataTrigger>
             </Style.Triggers>
@@ -64,7 +64,7 @@
         <Style x:Key="textoOrigen" TargetType="TextBlock">
             <Setter Property="Text" Value="Usuario" />
             <Style.Triggers>
-                <DataTrigger Binding="{Binding Path=Origen}" Value="B">
+                <DataTrigger Binding="{Binding Path=Origen}" Value="Bot">
                     <Setter Property="Text" Value="Robot" />
                 </DataTrigger>
             </Style.Triggers>
@@ -75,7 +75,7 @@
             <Setter Property="HorizontalAlignment" Value="Left" />
             <Setter Property="MaxWidth" Value="310" />
             <Style.Triggers>
-                <DataTrigger Binding="{Binding Path=Origen}" Value="B">
+                <DataTrigger Binding="{Binding Path=Origen}" Value="Bot">
                     <Setter Property="Background" Value="{Binding Source={x:Static properties:Settings.Default}, Path=colorRobot}" />
                     <Setter Property="HorizontalAlignment" Value="Right" />
                     <Setter Property="MaxWidth" Value="300" />

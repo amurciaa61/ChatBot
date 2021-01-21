@@ -66,7 +66,8 @@
             <ComboBox x:Name="fondoComboBox"
                       Grid.Row="0"
                       Grid.Column="1"
-                      SelectedItem="{Binding Path=ColorFondo}">
+                      SelectedValue="{Binding Path=ColorFondo}"
+                      SelectedValuePath="Name">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -85,7 +86,8 @@
                 x:Name="usuarioComboBox"
                 Grid.Row="1"
                 Grid.Column="1"
-                SelectedItem="{Binding Path=ColorUsuario}">
+                SelectedValue="{Binding Path=ColorUsuario}"
+                SelectedValuePath="Name">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -99,11 +101,11 @@
                 Grid.Row="2"
                 Grid.Column="0"
                 Text="Color del robot" />
-            <ComboBox
-                x:Name="robotComboBox"
-                Grid.Row="2"
-                Grid.Column="1"
-                SelectedItem="{Binding Path=ColorRobot}">
+            <ComboBox x:Name="robotComboBox"
+                      Grid.Row="2"
+                      Grid.Column="1"
+                      SelectedValue="{Binding Path=ColorRobot}"
+                      SelectedValuePath="Name">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -117,13 +119,13 @@
                 Grid.Row="3"
                 Grid.Column="0"
                 Text="Sexo del usuario" />
-            <ComboBox
-                x:Name="sexoComboBox"
-                Grid.Row="3"
-                Grid.Column="1"
-                Width="150"
-                HorizontalAlignment="Left"
-                SelectedItem="{Binding Path=Sexo}"/>
+            <ComboBox x:Name="sexoComboBox"
+                      Grid.Row="3"
+                      Grid.Column="1"
+                      Width="150"
+                      SelectedItem="{Binding Path=Sexo}"
+                      HorizontalAlignment="Left"
+                      />
         </Grid>
     </DockPanel>
 </Window>

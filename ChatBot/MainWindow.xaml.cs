@@ -7,7 +7,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
+
 
 namespace ChatBot
 {
@@ -119,11 +119,11 @@ namespace ChatBot
             mensajes.Add(new Mensaje(mensajeTextBox.Text, origen));
             if (hayConexion)
             {
-                mensajes.Add(new Mensaje("Procesando", "B"));
+                mensajes.Add(new Mensaje("Procesando", "Bot"));
                 mensajes[mensajes.Count - 1].Texto = await MensajeRobot(mensajeTextBox.Text);
             }
             else
-                mensajes.Add(new Mensaje(MENSAJE_BOT_INACCESIBLE, "B"));
+                mensajes.Add(new Mensaje(MENSAJE_BOT_INACCESIBLE, "Bot"));
             mensajeTextBox.Text = "";
 
         }
@@ -135,16 +135,18 @@ namespace ChatBot
         {
             Configuracion configuracion = new Configuracion();
             configuracion.Owner = this;
-            configuracion.ColorFondo = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.colorFondo);
-            configuracion.ColorUsuario = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.colorUsuario);
+            configuracion.ColorFondo = Properties.Settings.Default.colorFondo;
+            configuracion.ColorUsuario = Properties.Settings.Default.colorUsuario;
+            configuracion.ColorRobot = Properties.Settings.Default.colorRobot;
             configuracion.Sexo = Properties.Settings.Default.sexo;
+
             if (configuracion.ShowDialog() == true)
             {
                 Properties.Settings.Default.sexo = configuracion.Sexo;
                 origen = Properties.Settings.Default.sexo;
-                Properties.Settings.Default.colorFondo = configuracion.ColorFondo.ToString();
-                Properties.Settings.Default.colorUsuario = configuracion.ColorUsuario.ToString();
-                Properties.Settings.Default.colorRobot = configuracion.ColorRobot.ToString();
+                Properties.Settings.Default.colorFondo = configuracion.ColorFondo;
+                Properties.Settings.Default.colorUsuario = configuracion.ColorUsuario;
+                Properties.Settings.Default.colorRobot = configuracion.ColorRobot;
                 Properties.Settings.Default.Save();
             }
         }

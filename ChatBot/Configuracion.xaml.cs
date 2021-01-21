@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Reflection;
+﻿using System.Collections.ObjectModel;
+
 using System.Windows;
-using System.Windows.Controls;
+
 using System.Windows.Media;
 
 namespace ChatBot
@@ -12,9 +11,9 @@ namespace ChatBot
     /// </summary>
     public partial class Configuracion : Window
     {
-        public Color ColorFondo { get; set; }
-        public Color ColorUsuario { get; set; }
-        public Color ColorRobot { get; set; }
+        public string ColorFondo { get; set; }
+        public string ColorUsuario { get; set; }
+        public string ColorRobot { get; set; }
         public string Sexo { get; set; }
         public Configuracion()
         {
@@ -24,19 +23,12 @@ namespace ChatBot
             fondoComboBox.ItemsSource = typeof(Colors).GetProperties();
             usuarioComboBox.ItemsSource = typeof(Colors).GetProperties();
             robotComboBox.ItemsSource = typeof(Colors).GetProperties();
-            ColorFondo = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.colorFondo);
-            ColorUsuario = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.colorUsuario);
-            ObservableCollection<string> sexos = new ObservableCollection<string>{ "Hombre" , "Mujer" };
+            ObservableCollection<string> sexos = new ObservableCollection<string>{ "Hombre" , "Mujer" };      
             sexoComboBox.ItemsSource = sexos;
-            Sexo = Properties.Settings.Default.sexo;
         }
 
         private void Button_Click_Aceptar(object sender, RoutedEventArgs e)
         {
-            ColorFondo = (Color)(fondoComboBox.SelectedItem as PropertyInfo).GetValue(null, null);
-            ColorUsuario = (Color)(usuarioComboBox.SelectedItem as PropertyInfo).GetValue(null, null);
-            ColorRobot = (Color)(robotComboBox.SelectedItem as PropertyInfo).GetValue(null, null);
-            Sexo = sexoComboBox.SelectedItem.ToString().Substring(0, 1);
             DialogResult = true;
         }
     }

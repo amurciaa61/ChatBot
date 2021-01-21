@@ -37,7 +37,7 @@ namespace ChatBot.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("H")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Hombre")]
         public string sexo {
             get {
                 return ((string)(this["sexo"]));
@@ -61,7 +61,7 @@ namespace ChatBot.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("AquaMarine")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Aquamarine")]
         public string colorRobot {
             get {
                 return ((string)(this["colorRobot"]));
